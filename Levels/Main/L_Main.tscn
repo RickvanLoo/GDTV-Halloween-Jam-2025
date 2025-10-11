@@ -1,10 +1,11 @@
-[gd_scene load_steps=25 format=3 uid="uid://d2vgv6ie0v40s"]
+[gd_scene load_steps=27 format=3 uid="uid://d2vgv6ie0v40s"]
 
 [ext_resource type="Script" uid="uid://cfkfntxeg2qe6" path="res://Levels/Main/L_Main.gd" id="1_km1jj"]
 [ext_resource type="PackedScene" uid="uid://bdupkh0grwy27" path="res://Player/Player.tscn" id="1_qgept"]
 [ext_resource type="PackedScene" uid="uid://ctkc7yqdqdtao" path="res://Levels/Main/Geometry/Floor.tscn" id="1_yb0tt"]
 [ext_resource type="PackedScene" uid="uid://cdn7d5mxwdyks" path="res://Levels/Main/Geometry/Wall.tscn" id="3_jw8hm"]
 [ext_resource type="Material" uid="uid://sofvlrq3jmka" path="res://Levels/Main/Materials/M_Dark.tres" id="4_m7xar"]
+[ext_resource type="PackedScene" uid="uid://ctmad5g41fewt" path="res://LicensedAssets/KayKit_HalloweenBits_1.0_EXTRA/Assets/gltf/pumpkin_orange_jackolantern.gltf" id="6_ucjps"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_egctf"]
 size = Vector3(8, 4, 4)
@@ -69,6 +70,10 @@ ambient_light_sky_contribution = 0.9
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ucjps"]
+height = 1.0183105
+radius = 0.77197266
+
 [node name="L_Main" type="Node3D"]
 script = ExtResource("1_km1jj")
 
@@ -78,6 +83,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 [node name="ArenaGeometry" type="Node3D" parent="."]
 
 [node name="Floor" parent="ArenaGeometry" instance=ExtResource("1_yb0tt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000272125, 0.0074492693, -0.0030198097)
 
 [node name="Wall" parent="ArenaGeometry" instance=ExtResource("3_jw8hm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.75, -20)
@@ -230,3 +236,12 @@ environment = SubResource("Environment_7ofk6")
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866026, -0.5, 0.75, -0.433013, 0, 5, 0)
 shadow_enabled = true
 directional_shadow_max_distance = 250.0
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.7884283, -13.050291)
+
+[node name="pumpkin_orange_jackolantern2" parent="RigidBody3D" instance=ExtResource("6_ucjps")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.62224734, 0)
+shape = SubResource("CylinderShape3D_ucjps")
