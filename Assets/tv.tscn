@@ -1,6 +1,7 @@
-[gd_scene load_steps=40 format=4 uid="uid://bu83xw8vlnqxj"]
+[gd_scene load_steps=42 format=4 uid="uid://bu83xw8vlnqxj"]
 
 [ext_resource type="Texture2D" uid="uid://ll518tlaflim" path="res://LicensedAssets/OldTV/old_tv__remote_low_poly_0.jpg" id="1_t37c6"]
+[ext_resource type="Script" uid="uid://cmtsj4o8wfhlu" path="res://Assets/flickeringStatic.gd" id="2_ntryi"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t37c6"]
 size = Vector3(2.383545, 2.4375, 1.7393799)
@@ -562,6 +563,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_4570a")
 
+[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_ntryi"]
+buffer_length = 0.1
+
 [node name="TV" type="Node3D"]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
@@ -666,7 +670,10 @@ transform = Transform3D(0.058319047, 0, 0, 0, 9.831856e-09, -0.036415875, 0, 0.0
 mesh = SubResource("ArrayMesh_ue3pn")
 skeleton = NodePath("")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="."]
+[node name="FlickeringStatic" type="Node3D" parent="."]
+script = ExtResource("2_ntryi")
+
+[node name="OuterLight" type="SpotLight3D" parent="FlickeringStatic"]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1, 0)
 light_energy = 10.0
 light_indirect_energy = 2.0
@@ -675,11 +682,14 @@ spot_range = 6.875
 spot_attenuation = 0.55
 spot_angle = 64.81
 
-[node name="SpotLight3D" type="SpotLight3D" parent="SpotLight3D"]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.008, 0.4, -1.103)
-light_energy = 12.646
+[node name="InnerLight" type="SpotLight3D" parent="FlickeringStatic"]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 0.008000097, 1.4, 1.103)
+light_energy = 10.0
 light_indirect_energy = 4.745
 light_volumetric_fog_energy = 2.0
 spot_range = 1.5
 spot_attenuation = -0.46
 spot_angle = 52.93
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="FlickeringStatic"]
+stream = SubResource("AudioStreamGenerator_ntryi")
