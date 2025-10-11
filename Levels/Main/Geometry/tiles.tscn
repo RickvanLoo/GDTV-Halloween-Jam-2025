@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://cat10oe2kd6yn"]
+
+[ext_resource type="PackedScene" uid="uid://6vo7ryt4m56i" path="res://LicensedAssets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/wall.gltf" id="1_b018m"]
+[ext_resource type="PackedScene" uid="uid://da2rakaydxlnu" path="res://LicensedAssets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/wall_window_open.gltf" id="2_l51ok"]
+[ext_resource type="PackedScene" uid="uid://dw3taurwnghh4" path="res://LicensedAssets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/wall_window_closed.gltf" id="3_m6vfl"]
+[ext_resource type="PackedScene" uid="uid://cajx5ggbsb4ya" path="res://LicensedAssets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/wall_doorway.gltf" id="4_iy6pj"]
+[ext_resource type="PackedScene" uid="uid://c5e4tufqc3tuq" path="res://LicensedAssets/KayKit_HalloweenBits_1.0_EXTRA/Assets/gltf/floor_dirt_small.gltf" id="5_d6cc0"]
+[ext_resource type="PackedScene" uid="uid://dr1rr87gonf2p" path="res://LicensedAssets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/floor_kitchen_small.gltf" id="6_082d6"]
+
+[node name="Tiles" type="Node3D"]
+
+[node name="wall2" parent="." instance=ExtResource("1_b018m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2388716, 0, 0)
+
+[node name="wall_window_open2" parent="." instance=ExtResource("2_l51ok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.7373886)
+
+[node name="wall_window_closed2" parent="." instance=ExtResource("3_m6vfl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.405775, 0, 4.6885858)
+
+[node name="wall_doorway2" parent="." instance=ExtResource("4_iy6pj")]
+
+[node name="floor_dirt_small2" parent="." instance=ExtResource("5_d6cc0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7862537, 0, 0)
+
+[node name="floor_kitchen_small2" parent="." instance=ExtResource("6_082d6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7857084, 0, 4.420392)
