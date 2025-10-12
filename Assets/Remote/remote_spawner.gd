@@ -9,7 +9,8 @@ var current_location_index = 0
 ## setPosition sets the "Remote" position to one of the set Marker3Ds within "Locations".
 func setPosition(index: int) -> void:
 	current_location_index = index
-	Remote.position = Locations[index].position
+	Remote.global_position = Locations[index].global_position
+	Remote.global_rotation = Locations[index].global_rotation
 
 ## getSemiRandomIndex returns a "random" index of the locations, but makes sure it's different than the previous.
 func getSemiRandomLocation() -> int:
