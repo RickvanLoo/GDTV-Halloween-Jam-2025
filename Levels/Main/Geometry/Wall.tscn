@@ -1,18 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://cdn7d5mxwdyks"]
-
-[ext_resource type="Material" uid="uid://sofvlrq3jmka" path="res://Levels/Main/Materials/M_Dark.tres" id="1_h7iyj"]
+[gd_scene load_steps=5 format=3 uid="uid://byvnbdhw0ewx3"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_7y6gq"]
 size = Vector3(40, 12, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_n3gab"]
+load_path = "res://.godot/imported/T_Grid.png-e5c46bba002abd59c6e5c194a065636e.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hc2am"]
+albedo_texture = SubResource("CompressedTexture2D_n3gab")
+metallic_specular = 0.0
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_offset = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+texture_filter = 5
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_y0tdx"]
 data = PackedVector3Array(-20, 6, 0.5, 20, 6, 0.5, -20, -6, 0.5, 20, 6, 0.5, 20, -6, 0.5, -20, -6, 0.5, 20, 6, -0.5, -20, 6, -0.5, 20, -6, -0.5, -20, 6, -0.5, -20, -6, -0.5, 20, -6, -0.5, 20, 6, 0.5, 20, 6, -0.5, 20, -6, 0.5, 20, 6, -0.5, 20, -6, -0.5, 20, -6, 0.5, -20, 6, -0.5, -20, 6, 0.5, -20, -6, -0.5, -20, 6, 0.5, -20, -6, 0.5, -20, -6, -0.5, 20, 6, 0.5, -20, 6, 0.5, 20, 6, -0.5, -20, 6, 0.5, -20, 6, -0.5, 20, 6, -0.5, -20, -6, 0.5, 20, -6, 0.5, -20, -6, -0.5, 20, -6, 0.5, 20, -6, -0.5, -20, -6, -0.5)
 
 [node name="Wall" type="MeshInstance3D"]
-mesh = SubResource( "BoxMesh_7y6gq" )
-surface_material_override/0 = ExtResource( "1_h7iyj" )
+mesh = SubResource("BoxMesh_7y6gq")
+surface_material_override/0 = SubResource("StandardMaterial3D_hc2am")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource( "ConcavePolygonShape3D_y0tdx" )
+shape = SubResource("ConcavePolygonShape3D_y0tdx")
