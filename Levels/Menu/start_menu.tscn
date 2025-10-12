@@ -1,0 +1,122 @@
+[gd_scene load_steps=8 format=3 uid="uid://dehtpdsv6seij"]
+
+[ext_resource type="FontFile" uid="uid://b8j8ofai05mls" path="res://Fonts/Eater/Eater-Regular.ttf" id="1_lrh4q"]
+[ext_resource type="Texture2D" uid="uid://dckppuiefhgei" path="res://Images/halloweenbg.png" id="1_rofqa"]
+[ext_resource type="Script" uid="uid://d1o6leafcbfad" path="res://Levels/Menu/start_menu.gd" id="1_x75ta"]
+[ext_resource type="AudioStream" uid="uid://dhcr58ii7h2i1" path="res://Sounds/menutheme.ogg" id="4_b1o7j"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rofqa"]
+font = ExtResource("1_lrh4q")
+font_size = 60
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_x75ta"]
+font = ExtResource("1_lrh4q")
+font_size = 20
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_b1o7j"]
+font = ExtResource("1_lrh4q")
+font_size = 20
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(5, 5)
+
+[node name="StartMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x75ta")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_rofqa")
+expand_mode = 3
+
+[node name="TitleLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -223.0
+offset_top = -274.0
+offset_right = 223.0
+offset_bottom = -199.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "PROJECT HALLOWEEN "
+label_settings = SubResource("LabelSettings_rofqa")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ControlsLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -163.0
+offset_right = 238.0
+offset_bottom = -2.0
+grow_vertical = 0
+text = "Controls
+W/A/S/D - Move
+SHIFT - Sprint
+E- INTERACT"
+label_settings = SubResource("LabelSettings_x75ta")
+vertical_alignment = 1
+
+[node name="HintLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -43.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "You better not lose that TV Remote!"
+label_settings = SubResource("LabelSettings_b1o7j")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.0
+offset_top = -74.0
+offset_right = 71.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_lrh4q")
+theme_override_font_sizes/font_size = 40
+text = "START"
+
+[node name="StartMenuMusicPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_b1o7j")
+volume_db = -10.0
+autoplay = true
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
