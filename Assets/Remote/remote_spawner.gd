@@ -1,0 +1,26 @@
+@tool
+extends Node3D
+
+@onready var Remote = get_node("Remote")
+@onready var Locations = get_node("Locations").get_children(true)
+
+var current_location_index = 0
+
+## setPosition sets the "Remote" position to one of the set Marker3Ds within "Locations".
+func setPosition(index: int) -> void:
+	current_location_index = index
+	Remote.position = Locations[index].position
+
+## getSemiRandomIndex returns a "random" index of the locations, but makes sure it's different than the previous.
+func getSemiRandomLocation() -> int:
+	var random_index = current_location_index
+	while random_index == current_location_index:
+		random_index = randi_range(0, Locations.size()-1)
+	
+	return random_index
+
+func _ready():
+	setPosition(0) # Always start at location 0
+	
+func _on_interact_area_remote_interacted() -> void:
+	setPosition(getSemiRandomLocation())
