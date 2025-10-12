@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://b64bvsnadhrui"]
+
+[ext_resource type="PackedScene" uid="uid://bf3wr47w2jp17" path="res://LicensedAssets/KayKit_Prototype_Bits_1.0_FREE/Assets/gltf/Door_A.gltf" id="1_hptqb"]
+[ext_resource type="Script" uid="uid://bxbqu2irn23jq" path="res://Levels/Main/Geometry/locked_door.gd" id="1_v1i0y"]
+[ext_resource type="AudioStream" uid="uid://taqy1bk6c1ud" path="res://Sounds/doorlocked.ogg" id="2_v1i0y"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lhp2v"]
+size = Vector3(4.3515625, 2.8854675, 2.392784)
+
+[node name="LockedDoor" type="Node3D"]
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_v1i0y")
+locked_sound = ExtResource("2_v1i0y")
+
+[node name="Door_A2" parent="Area3D" instance=ExtResource("1_hptqb")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7995477, 1.390091, 0.69639206)
+shape = SubResource("BoxShape3D_lhp2v")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Area3D"]
+stream = ExtResource("2_v1i0y")
+volume_db = -20.0
+bus = &"Soundeffects"
+area_mask = 3
