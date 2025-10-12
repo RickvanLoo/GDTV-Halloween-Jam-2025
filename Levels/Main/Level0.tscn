@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cfkfntxeg2qe6" path="res://Levels/Main/Level0.gd" id="1_aqgjt"]
 [ext_resource type="PackedScene" uid="uid://bdupkh0grwy27" path="res://Player/Player.tscn" id="2_41uey"]
 [ext_resource type="MeshLibrary" uid="uid://bu8ijf5kymy5x" path="res://Resources/tiles.tres" id="3_oayxj"]
-[ext_resource type="PackedScene" uid="uid://bf3wr47w2jp17" path="res://LicensedAssets/KayKit_Prototype_Bits_1.0_FREE/Assets/gltf/Door_A.gltf" id="4_wrtwb"]
+[ext_resource type="PackedScene" uid="uid://b64bvsnadhrui" path="res://Levels/Main/Geometry/locked_door.tscn" id="4_aqgjt"]
 [ext_resource type="PackedScene" uid="uid://ctmad5g41fewt" path="res://LicensedAssets/KayKit_HalloweenBits_1.0_EXTRA/Assets/gltf/pumpkin_orange_jackolantern.gltf" id="5_tqbgj"]
 [ext_resource type="PackedScene" uid="uid://bu83xw8vlnqxj" path="res://Assets/tv.tscn" id="6_fholw"]
 
@@ -46,7 +46,7 @@ data = {
 "cells": PackedInt32Array(65521, 65512, 0, 65520, 65516, 1441792, 65520, 65523, 1441792, 65520, 65530, 1441792, 65520, 8, 1441792, 65520, 15, 1441792, 65520, 21, 1441792, 65522, 24, 655360, 65525, 24, 655360, 65528, 24, 655360, 65531, 24, 655360, 7, 24, 655360, 10, 24, 655360, 13, 24, 655360, 16, 24, 655360, 18, 21, 1048576, 18, 0, 1048576, 18, 65529, 1048576, 18, 65522, 1048576, 18, 65515, 1048576, 65524, 65512, 0, 65527, 65512, 0, 65530, 65512, 0, 65533, 65512, 0, 6, 65512, 0, 9, 65512, 0, 12, 65512, 0, 15, 65512, 0, 16, 65512, 0, 18, 7, 1048576, 18, 14, 1441795, 0, 65512, 655361, 3, 65512, 655361, 65533, 24, 655360, 0, 24, 655362, 3, 24, 655362, 6, 24, 655360, 65520, 1, 1048578)
 }
 
-[node name="Door_A2" parent="Environment" instance=ExtResource("4_wrtwb")]
+[node name="LockedDoor" parent="Environment" instance=ExtResource("4_aqgjt")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 18.5, 0.5, 6.45)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Environment"]
