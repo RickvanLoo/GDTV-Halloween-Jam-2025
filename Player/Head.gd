@@ -14,6 +14,8 @@ var rot := Vector3()
 func _ready() -> void:
 	mouse_sensitivity = mouse_sensitivity / 1000
 	y_limit = deg_to_rad(y_limit)
+	rot.y = cam.global_rotation.y
+	rot.x = cam.global_rotation.x
 
 
 # Called when there is an input event
@@ -39,6 +41,7 @@ func camera_rotation() -> void:
 	rot.y -= mouse_axis.x * mouse_sensitivity
 	# Vertical mouse look.
 	rot.x = clamp(rot.x - mouse_axis.y * mouse_sensitivity, -y_limit, y_limit)
+	
 	
 	get_owner().rotation.y = rot.y
 	rotation.x = rot.x

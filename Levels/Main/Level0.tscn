@@ -39,7 +39,7 @@ glow_enabled = true
 script = ExtResource("1_aqgjt")
 
 [node name="Player" parent="." instance=ExtResource("2_41uey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.731715, 1.5396447, 11.136832)
+transform = Transform3D(0.51920587, 0, 0.8546492, 0, 1, 0, -0.8546492, 0, 0.51920587, -10.644791, 1.5396447, 10.474782)
 
 [node name="Environment" type="Node3D" parent="."]
 
