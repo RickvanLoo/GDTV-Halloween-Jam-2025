@@ -21,24 +21,19 @@ func _ready() -> void:
 	y_limit = deg_to_rad(y_limit)
 
 
-# Called when there is an input event
 func _input(event: InputEvent) -> void:
-	# Mouse look (only if the mouse is captured).
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		mouse_axis += event.relative
+		mouse_axis = event.relative
+		camera_rotation()
 
 
-# Called every physics tick. 'delta' is constant
-func _physics_process(delta: float) -> void:
+func _process(delta: float) -> void:
 	var joystick_axis := Input.get_vector(&"look_left", &"look_right",
 			&"look_down", &"look_up")
 
 	if joystick_axis != Vector2.ZERO:
 		mouse_axis = joystick_axis * 1000.0 * delta
-
-	if mouse_axis != Vector2.ZERO:
 		camera_rotation()
-		mouse_axis = Vector2.ZERO  # Reset after applying
 
 
 func camera_rotation() -> void:
