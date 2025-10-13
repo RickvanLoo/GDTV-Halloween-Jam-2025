@@ -4,7 +4,7 @@ extends Node3D
 @export_node_path("Camera3D") var cam_path := NodePath("Camera")
 @onready var cam: Camera3D = get_node(cam_path)
 
-@export var web_sensitivity_multiplier := 5.0
+@export var web_sensitivity_multiplier := 3.5
 @export var mouse_sensitivity := 2.0
 @export var y_limit := 90.0
 var mouse_axis := Vector2()
