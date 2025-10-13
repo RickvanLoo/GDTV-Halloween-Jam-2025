@@ -36,12 +36,12 @@ func _process(delta: float) -> void:
 
 
 func camera_rotation() -> void:
-	# Horizontal mouse look - update rotation value
+	# Horizontal mouse look
 	rot.y -= mouse_axis.x * mouse_sensitivity
 	# Vertical mouse look
 	rot.x = clamp(rot.x - mouse_axis.y * mouse_sensitivity, -y_limit, y_limit)
 
-	# Apply rotation immediately to this node (Head)
+	# Apply rotation immediately to Head
 	global_rotation.y = rot.y
 	rotation.x = rot.x
 
