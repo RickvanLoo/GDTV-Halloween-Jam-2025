@@ -7,13 +7,14 @@ extends ColorRect
 
 func _ready():
 	color = Color.TRANSPARENT
-
+	mouse_filter = Control.MOUSE_FILTER_IGNORE
+	
 	var total_size = dot_size + (border_thickness * 2)
 	size = Vector2(total_size, total_size)
-
+	
 	set_anchors_preset(Control.PRESET_CENTER)
 	pivot_offset = size / 2
-
+	
 	position = get_viewport_rect().size / 2 - size / 2
 
 func _draw():
