@@ -8,7 +8,7 @@ extends Node3D
 @export var mouse_sensitivity := 2.0
 @export var y_limit := 90.0
 
-# ✨ NEW: Smooth interpolation system
+#Smooth interpolation system
 var current_rot := Vector3()
 var target_rot := Vector3()
 @export var smoothing_speed := 30.0  # Higher = snappier, lower = smoother
@@ -39,7 +39,7 @@ func _process(delta: float) -> void:
 		target_rot.y -= joystick_axis.x * mouse_sensitivity * 1000.0 * delta
 		target_rot.x = clamp(target_rot.x - joystick_axis.y * mouse_sensitivity * 1000.0 * delta, -y_limit, y_limit)
 
-	# ✨ SMOOTH: Interpolate current rotation toward target every frame
+	# Interpolate current rotation toward target every frame
 	current_rot.x = lerp(current_rot.x, target_rot.x, smoothing_speed * delta)
 	current_rot.y = lerp(current_rot.y, target_rot.y, smoothing_speed * delta)
 
