@@ -186,7 +186,6 @@ top_level = true
 script = ExtResource("2_dbw0l")
 
 [node name="Remote" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 8)
 
 [node name="RigidBody3D" type="RigidBody3D" parent="Remote"]
 
