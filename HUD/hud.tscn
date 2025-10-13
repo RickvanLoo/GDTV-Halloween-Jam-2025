@@ -9,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="CrosshairCanvasLayer" type="CanvasLayer" parent="."]
 layer = 100
@@ -16,4 +17,5 @@ layer = 100
 [node name="CrosshairColorRect" type="ColorRect" parent="CrosshairCanvasLayer"]
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 script = ExtResource("1_h61sl")
