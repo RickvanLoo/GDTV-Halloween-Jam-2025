@@ -11,7 +11,6 @@ var mouse_axis := Vector2()
 var rot := Vector3()
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	mouse_sensitivity = mouse_sensitivity / 1000
 
@@ -37,10 +36,15 @@ func _process(delta: float) -> void:
 
 
 func camera_rotation() -> void:
-	# Horizontal mouse look.
+	# Horizontal mouse look
 	rot.y -= mouse_axis.x * mouse_sensitivity
-	# Vertical mouse look.
+	# Vertical mouse look
 	rot.x = clamp(rot.x - mouse_axis.y * mouse_sensitivity, -y_limit, y_limit)
 
-	get_owner().rotation.y = rot.y
+	# Apply rotation immediately to Head
+	global_rotation.y = rot.y
 	rotation.x = rot.x
+
+	# Sync the owner's rotation separately
+	if get_owner():
+		get_owner().rotation.y = rot.y
