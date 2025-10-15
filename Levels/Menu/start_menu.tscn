@@ -1,9 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://dehtpdsv6seij"]
+[gd_scene load_steps=9 format=3 uid="uid://dehtpdsv6seij"]
 
 [ext_resource type="FontFile" uid="uid://b8j8ofai05mls" path="res://Fonts/Eater/Eater-Regular.ttf" id="1_lrh4q"]
 [ext_resource type="Texture2D" uid="uid://dckppuiefhgei" path="res://Images/halloweenbg.png" id="1_rofqa"]
-[ext_resource type="Script" uid="uid://d1o6leafcbfad" path="res://Levels/Menu/start_menu.gd" id="1_x75ta"]
+[ext_resource type="Script" uid="uid://dqqbsqgjlfgrb" path="res://Levels/Menu/restart_button.gd" id="3_b1o7j"]
 [ext_resource type="AudioStream" uid="uid://dhcr58ii7h2i1" path="res://Sounds/menutheme.ogg" id="4_b1o7j"]
+
+[sub_resource type="GDScript" id="GDScript_uvg7s"]
+script/source = "extends Control
+
+
+func _on_start_button_pressed() -> void:
+	GlobalState.start_game()
+"
 
 [sub_resource type="LabelSettings" id="LabelSettings_rofqa"]
 font = ExtResource("1_lrh4q")
@@ -36,7 +44,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_x75ta")
+script = SubResource("GDScript_uvg7s")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -113,6 +121,7 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_lrh4q")
 theme_override_font_sizes/font_size = 40
 text = "START"
+script = ExtResource("3_b1o7j")
 
 [node name="StartMenuMusicPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_b1o7j")

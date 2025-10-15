@@ -148,6 +148,9 @@ directional_shadow_max_distance = 250.0
 [node name="RemoteSpawner" parent="." instance=ExtResource("16_xin5v")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -12.129154, 1.2788404, 2.218402)
 
+[node name="Remote" parent="RemoteSpawner" index="0"]
+transform = Transform3D(0.3717405, 0, 0.9283367, 0, 1, 0, -0.9283367, 0, 0.3717405, -3.3916664, 1.3941307, 16.03727)
+
 [node name="0" parent="RemoteSpawner/Locations" index="0"]
 transform = Transform3D(0.3717405, 0, 0.9283367, 0, 1, 0, -0.9283367, 0, 0.3717405, -4.3916664, 1.3941307, 15.03727)
 

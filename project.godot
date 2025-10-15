@@ -15,6 +15,10 @@ run/main_scene="uid://dehtpdsv6seij"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="uid://dnrfwjwvlbs8k"
 
+[autoload]
+
+GlobalState="*res://Levels/GlobalState.gd"
+
 [input]
 
 move_forward={
