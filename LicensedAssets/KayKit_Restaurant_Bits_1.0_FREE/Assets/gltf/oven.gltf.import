@@ -40,11 +40,9 @@ materials/extract_path=""
 _subresources={
 "nodes": {
 "PATH:oven": {
-"generate/physics": true,
 "physics/shape_type": 0
 },
 "PATH:oven/oven_door": {
-"generate/physics": true,
 "physics/shape_type": 0
 }
 }

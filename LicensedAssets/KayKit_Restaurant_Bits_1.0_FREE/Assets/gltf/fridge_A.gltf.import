@@ -40,15 +40,12 @@ materials/extract_path=""
 _subresources={
 "nodes": {
 "PATH:fridge_A": {
-"generate/physics": true,
 "physics/shape_type": 3
 },
 "PATH:fridge_A/fridge_A_door_bottom": {
-"generate/physics": true,
 "physics/shape_type": 0
 },
 "PATH:fridge_A/fridge_A_door_top": {
-"generate/physics": true,
 "physics/shape_type": 0
 }
 }
