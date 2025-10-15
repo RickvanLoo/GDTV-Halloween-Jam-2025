@@ -40,7 +40,6 @@ materials/extract_path=""
 _subresources={
 "nodes": {
 "PATH:kitchentable_A_large_decorated": {
-"generate/physics": true,
 "physics/shape_type": 0
 }
 }
