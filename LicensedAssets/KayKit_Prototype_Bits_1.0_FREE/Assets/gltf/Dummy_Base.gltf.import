@@ -37,6 +37,33 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:Dummy_Base": {
+"generate/physics": true,
+"physics/shape_type": 0
+},
+"PATH:Dummy_Base/Dummy_Body": {
+"generate/physics": true,
+"physics/shape_type": 0
+},
+"PATH:Dummy_Base/Dummy_Body/Dummy_ArmLeft": {
+"generate/physics": true,
+"physics/shape_type": 0
+},
+"PATH:Dummy_Base/Dummy_Body/Dummy_ArmRight": {
+"generate/physics": true,
+"physics/shape_type": 0
+},
+"PATH:Dummy_Base/Dummy_Body/Dummy_Head": {
+"generate/physics": true,
+"physics/shape_type": 0
+},
+"PATH:Dummy_Base/Dummy_Body/Dummy_Target": {
+"generate/physics": true,
+"physics/shape_type": 0
+}
+}
+}
 gltf/naming_version=2
 gltf/embedded_image_handling=1
