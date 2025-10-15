@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://dflbaynagx3ei"]
+[gd_scene load_steps=6 format=3 uid="uid://dflbaynagx3ei"]
 
 [ext_resource type="Script" uid="uid://i4udnsmwr4ml" path="res://Levels/Menu/game_over.gd" id="1_8jqwo"]
 [ext_resource type="FontFile" uid="uid://b8j8ofai05mls" path="res://Fonts/Eater/Eater-Regular.ttf" id="1_cxxjm"]
+[ext_resource type="Texture2D" uid="uid://dm2krd33xdim" path="res://Images/TVImage.png" id="2_3qpau"]
 [ext_resource type="Script" uid="uid://dqqbsqgjlfgrb" path="res://Levels/Menu/restart_button.gd" id="2_hxi4m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3qpau"]
+bg_color = Color(1, 1, 1, 0.7254902)
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -13,19 +17,31 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8jqwo")
 
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -22.15387
+offset_right = 22.153809
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_3qpau")
+expand_mode = 3
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = -67.5
-offset_bottom = 67.5
+offset_top = -243.5
+offset_bottom = -108.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_cxxjm")
 theme_override_font_sizes/font_size = 72
-text = "Game over :("
+text = "Game over"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="."]
@@ -36,11 +52,13 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -87.0
-offset_top = 74.0
+offset_top = 178.0
 offset_right = 87.0
-offset_bottom = 134.0
+offset_bottom = 238.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_3qpau")
 text = "RESTART"
 script = ExtResource("2_hxi4m")
 
