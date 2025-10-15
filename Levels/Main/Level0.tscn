@@ -280,6 +280,30 @@ transform = Transform3D(0.87494105, 0, 0.48422942, 0, 1, 0, -0.48422942, 0, 0.87
 [node name="coffin2" parent="Environment/IndoorProps" instance=ExtResource("41_lwb5j")]
 transform = Transform3D(1, 0, 0, 0, 0.104441635, -0.99453104, 0, 0.99453104, 0.104441635, 11.946245, 1.9787889, 4.6373615)
 
+[node name="haybale2" parent="Environment/IndoorProps" instance=ExtResource("44_6igw0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.536877, 0.5457107, 5.0615916)
+
+[node name="bench_decorated2" parent="Environment/IndoorProps" instance=ExtResource("45_k64d5")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 14.073231, 0.5, 11.434658)
+
+[node name="pitchfork2" parent="Environment/IndoorProps" instance=ExtResource("46_bv3jw")]
+transform = Transform3D(-0.01403673, 0.104345106, -0.99444216, 0.07867044, 0.9915725, 0.102933556, 0.99680185, -0.076788306, -0.022127226, 18.044378, 1.0845507, 6.0757766)
+
+[node name="pumpkin_orange2" parent="Environment/IndoorProps" instance=ExtResource("47_4s6qs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.571981, 0.503383, 10.474227)
+
+[node name="pumpkin_yellow2" parent="Environment/IndoorProps" instance=ExtResource("48_niusd")]
+transform = Transform3D(-0.10893628, 0, 0.9940488, 0, 1, 0, -0.9940488, 0, -0.10893628, 11.467003, 0.4340493, 11.14407)
+
+[node name="pumpkin_yellow3" parent="Environment/IndoorProps" instance=ExtResource("48_niusd")]
+transform = Transform3D(0.8743149, 0, -0.48535907, 0, 1, 0, 0.48535907, 0, 0.8743149, 11.4961195, 0.433063, 10.221948)
+
+[node name="pumpkin_orange3" parent="Environment/IndoorProps" instance=ExtResource("47_4s6qs")]
+transform = Transform3D(0.6487046, 0, 0.76104033, 0, 1, 0, -0.76104033, 0, 0.6487046, 11.127117, 0.87393063, 10.781754)
+
+[node name="gravestone2" parent="Environment/IndoorProps" instance=ExtResource("49_lxwiq")]
+transform = Transform3D(-0.016202845, -0.3497823, 0.93669087, -0.006049616, 0.936831, 0.34972998, -0.99985045, 0, -0.017295375, 10.439201, 0.5, 7.9305716)
+
 [node name="Lighting" type="Node" parent="."]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting"]
@@ -303,29 +327,5 @@ transform = Transform3D(0.3717405, 0, 0.9283367, 0, 1, 0, -0.9283367, 0, 0.37174
 transform = Transform3D(1, 0, 0, 0, -0.5694803, -0.822005, 0, 0.822005, -0.5694803, 5.231262, 0, 9.9837265)
 
 [node name="HUD" parent="." instance=ExtResource("17_5vyxx")]
-
-[node name="haybale2" parent="." instance=ExtResource("44_6igw0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.536877, 0.5457107, 5.0615916)
-
-[node name="bench_decorated2" parent="." instance=ExtResource("45_k64d5")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 14.073231, 0.5, 11.434658)
-
-[node name="pitchfork2" parent="." instance=ExtResource("46_bv3jw")]
-transform = Transform3D(-0.01403673, 0.104345106, -0.99444216, 0.07867044, 0.9915725, 0.102933556, 0.99680185, -0.076788306, -0.022127226, 18.044378, 1.0845507, 6.0757766)
-
-[node name="pumpkin_orange2" parent="." instance=ExtResource("47_4s6qs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.571981, 0.503383, 10.474227)
-
-[node name="pumpkin_yellow2" parent="." instance=ExtResource("48_niusd")]
-transform = Transform3D(-0.10893628, 0, 0.9940488, 0, 1, 0, -0.9940488, 0, -0.10893628, 11.467003, 0.4340493, 11.14407)
-
-[node name="pumpkin_yellow3" parent="." instance=ExtResource("48_niusd")]
-transform = Transform3D(0.8743149, 0, -0.48535907, 0, 1, 0, 0.48535907, 0, 0.8743149, 11.4961195, 0.433063, 10.221948)
-
-[node name="pumpkin_orange3" parent="." instance=ExtResource("47_4s6qs")]
-transform = Transform3D(0.6487046, 0, 0.76104033, 0, 1, 0, -0.76104033, 0, 0.6487046, 11.127117, 0.87393063, 10.781754)
-
-[node name="gravestone2" parent="." instance=ExtResource("49_lxwiq")]
-transform = Transform3D(-0.016202845, -0.3497823, 0.93669087, -0.006049616, 0.936831, 0.34972998, -0.99985045, 0, -0.017295375, 10.439201, 0.5, 7.9305716)
 
 [editable path="RemoteSpawner"]
