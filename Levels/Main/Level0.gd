@@ -19,6 +19,7 @@ func _ready() -> void:
 		print("** 'Esc' to close 'Shift + F1' to release mouse **")
 	
 	set_process_input(fast_close)
+	GlobalState.reset_timer()
 
 
 func _input(event: InputEvent) -> void:

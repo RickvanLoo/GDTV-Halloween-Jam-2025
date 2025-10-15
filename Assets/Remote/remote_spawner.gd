@@ -1,6 +1,8 @@
 @tool
 extends Node3D
 
+@export var time_score = 10.0
+
 @onready var Remote = get_node("Remote")
 @onready var Locations = get_node("Locations").get_children(true)
 
@@ -25,3 +27,4 @@ func _ready():
 	
 func _on_interact_area_remote_interacted() -> void:
 	setPosition(getSemiRandomLocation())
+	GlobalState.add_time(time_score)
