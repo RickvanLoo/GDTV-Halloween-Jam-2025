@@ -6,8 +6,9 @@ extends Node3D
 
 var _time := 0.0
 var _frame := 0
-@onready var outer_light = get_node("OuterLight")
-@onready var inner_light = get_node("InnerLight")
+@onready var light = get_node("Light")
+# super hacky wtf pls fix
+@onready var emissive_screen = get_parent().get_node("StaticBody3D/MeshCollection/Cube_002_15/EmissiveScreen")
 @onready var audio_player = get_node("AudioStreamPlayer3D")
 
 var playback: AudioStreamGeneratorPlayback
@@ -49,8 +50,10 @@ func _process(delta: float) -> void:
 		var value = clamp(char.unicode_at(0) - 'a'.unicode_at(0), 0, 25)
 		
 		LightValue =  max_energy * (value / 25.0)
-		outer_light.light_energy = LightValue
-		inner_light.light_energy =  LightValue
+		light.light_energy = LightValue
+		emissive_screen.get_surface_override_material(0).emission_energy = LightValue
+		
+	
 		
 		
 	if not playback:

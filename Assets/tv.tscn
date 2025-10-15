@@ -1,6 +1,7 @@
-[gd_scene load_steps=42 format=4 uid="uid://bu83xw8vlnqxj"]
+[gd_scene load_steps=44 format=4 uid="uid://bu83xw8vlnqxj"]
 
 [ext_resource type="Texture2D" uid="uid://ll518tlaflim" path="res://LicensedAssets/OldTV/old_tv__remote_low_poly_0.jpg" id="1_t37c6"]
+[ext_resource type="FontFile" uid="uid://b8j8ofai05mls" path="res://Fonts/Eater/Eater-Regular.ttf" id="2_lhdy2"]
 [ext_resource type="Script" uid="uid://cmtsj4o8wfhlu" path="res://Assets/flickeringStatic.gd" id="2_ntryi"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t37c6"]
@@ -319,6 +320,14 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_7bbnn")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ntryi"]
+transparency = 1
+albedo_color = Color(0, 0, 0, 1)
+emission_enabled = true
+emission = Color(0.98039216, 0.98039216, 0.98039216, 1)
+emission_energy_multiplier = 10.0
+normal_scale = 1.85
+
 [sub_resource type="ArrayMesh" id="ArrayMesh_xuat0"]
 _surfaces = [{
 "aabb": AABB(-0.84834, 0.35855013, -1.2211334, 1.6999211, 1.6947341, 0.7537147),
@@ -622,9 +631,22 @@ skeleton = NodePath("")
 
 [node name="Cube_002_15" type="Node3D" parent="StaticBody3D/MeshCollection"]
 
-[node name="Object_19" type="MeshInstance3D" parent="StaticBody3D/MeshCollection/Cube_002_15"]
+[node name="EmissiveScreen" type="MeshInstance3D" parent="StaticBody3D/MeshCollection/Cube_002_15"]
 mesh = SubResource("ArrayMesh_jn44f")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ntryi")
+
+[node name="Label3D" type="Label3D" parent="StaticBody3D/MeshCollection/Cube_002_15/EmissiveScreen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0010118486, 1.2809005, 0.53399324)
+modulate = Color(0, 0, 0, 1)
+text = "FIND THE
+REMOTE
+OR ELSE"
+font = ExtResource("2_lhdy2")
+font_size = 60
+outline_size = 0
+uppercase = true
+line_spacing = -32.0
 
 [node name="Cube_009_16" type="Node3D" parent="StaticBody3D/MeshCollection"]
 
@@ -673,23 +695,9 @@ skeleton = NodePath("")
 [node name="FlickeringStatic" type="Node3D" parent="."]
 script = ExtResource("2_ntryi")
 
-[node name="OuterLight" type="SpotLight3D" parent="FlickeringStatic"]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1, 0)
-light_energy = 10.0
-light_indirect_energy = 2.0
-light_volumetric_fog_energy = 2.0
-spot_range = 6.875
-spot_attenuation = 0.55
-spot_angle = 64.81
-
-[node name="InnerLight" type="SpotLight3D" parent="FlickeringStatic"]
-transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 0.008000097, 1.4, 1.103)
-light_energy = 10.0
-light_indirect_energy = 4.745
-light_volumetric_fog_energy = 2.0
-spot_range = 1.5
-spot_attenuation = -0.46
-spot_angle = 52.93
-
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="FlickeringStatic"]
 stream = SubResource("AudioStreamGenerator_ntryi")
+
+[node name="Light" type="OmniLight3D" parent="FlickeringStatic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2690704, 0.77682066)
+light_energy = 5.09
