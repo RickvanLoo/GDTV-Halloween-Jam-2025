@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://d2vgv6ie0v40s"]
+[gd_scene load_steps=79 format=3 uid="uid://d2vgv6ie0v40s"]
 
 [ext_resource type="Script" uid="uid://cfkfntxeg2qe6" path="res://Levels/Main/Level0.gd" id="1_aqgjt"]
 [ext_resource type="PackedScene" uid="uid://bdupkh0grwy27" path="res://Player/Player.tscn" id="2_41uey"]
@@ -45,7 +45,7 @@
 [ext_resource type="PackedScene" uid="uid://c3gijitmkcpyd" path="res://LicensedAssets/KayKit_HalloweenBits_1.0_EXTRA/Assets/gltf/coffin.gltf" id="41_lwb5j"]
 [ext_resource type="PackedScene" uid="uid://bwifgqr4uthu0" path="res://LicensedAssets/KayKit_HalloweenBits_1.0_EXTRA/Assets/gltf/haybale.gltf" id="44_6igw0"]
 [ext_resource type="PackedScene" uid="uid://bndsh7yg7umk7" path="res://LicensedAssets/KayKit_HalloweenBits_1.0_EXTRA/Assets/gltf/bench_decorated.gltf" id="45_k64d5"]
-[ext_resource type="PackedScene" uid="uid://vbswvi23ygwp" path="res://LicensedAssets/KayKit_HalloweenBits_1.0_EXTRA/Assets/gltf/pitchfork.gltf" id="46_bv3jw"]
+[ext_resource type="PackedScene" uid="uid://vbswvi23ygwp" path="res://LicensedAssets/KayKit_HalloweenBits_1.0_EXTRA/Assets/gltf/pitcload_steps=73hfork.gltf" id="46_bv3jw"]
 [ext_resource type="PackedScene" uid="uid://d1t1sqhflnlvp" path="res://LicensedAssets/KayKit_HalloweenBits_1.0_EXTRA/Assets/gltf/pumpkin_orange.gltf" id="47_4s6qs"]
 [ext_resource type="PackedScene" uid="uid://blon0sr2girrf" path="res://LicensedAssets/KayKit_HalloweenBits_1.0_EXTRA/Assets/gltf/pumpkin_yellow.gltf" id="48_niusd"]
 [ext_resource type="PackedScene" uid="uid://d0ryt5jvcmcbt" path="res://LicensedAssets/KayKit_HalloweenBits_1.0_EXTRA/Assets/gltf/gravestone.gltf" id="49_lxwiq"]
@@ -65,6 +65,12 @@
 [ext_resource type="PackedScene" uid="uid://dwqpy3lde2wde" path="res://LicensedAssets/KayKit_Furniture_Bits_1.0_FREE/Assets/gltf/book_set.gltf" id="63_gvebp"]
 [ext_resource type="PackedScene" uid="uid://cpxgko8hieuja" path="res://LicensedAssets/KayKit_Furniture_Bits_1.0_FREE/Assets/gltf/shelf_B_small_decorated.gltf" id="64_7jvej"]
 [ext_resource type="AudioStream" uid="uid://b01ky7ktfcgfc" path="res://Sounds/ambient.ogg" id="65_8ekc2"]
+[ext_resource type="PackedScene" uid="uid://dcgfjr4xdih6u" path="res://LicensedAssets/Bathroom_Assets/Shower.tscn" id="65_8ekc2"]
+[ext_resource type="PackedScene" uid="uid://bpo6reguhkudg" path="res://LicensedAssets/Bathroom_Assets/Bathtub.tscn" id="66_ajmae"]
+[ext_resource type="PackedScene" uid="uid://c35fvs7cijaaw" path="res://LicensedAssets/Bathroom_Assets/Sink.tscn" id="66_u8kh4"]
+[ext_resource type="PackedScene" uid="uid://dbc8terlubi74" path="res://LicensedAssets/Bathroom_Assets/Toilet.tscn" id="67_brsg6"]
+[ext_resource type="PackedScene" uid="uid://ho363dl2d2co" path="res://LicensedAssets/Bathroom_Assets/Wasmachine1.tscn" id="68_lylhr"]
+[ext_resource type="PackedScene" uid="uid://c5uoq012tpxe4" path="res://LicensedAssets/Bathroom_Assets/Wasmachine2.tscn" id="69_shbf7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3bgcu"]
 
@@ -471,5 +477,23 @@ transform = Transform3D(1, 0, 0, 0, -0.5694803, -0.822005, 0, 0.822005, -0.56948
 stream = ExtResource("65_8ekc2")
 autoplay = true
 bus = &"Ambient"
+
+[node name="Shower" parent="." instance=ExtResource("65_8ekc2")]
+transform = Transform3D(-3.934025e-08, 0, -0.9, 0, 0.9, 0, 0.9, 0, -3.934025e-08, 7.5755734, 0.50000024, 5.0435123)
+
+[node name="Sink" parent="." instance=ExtResource("66_u8kh4")]
+transform = Transform3D(-3.934025e-08, 0, 0.9, 0, 0.9, 0, -0.9, 0, -3.934025e-08, 2.012, 0.5, 11.194)
+
+[node name="Toilet" parent="." instance=ExtResource("67_brsg6")]
+transform = Transform3D(-3.934025e-08, 0, 0.9, 0, 0.9, 0, -0.9, 0, -3.934025e-08, 8.394227, 0.50000024, 11.705382)
+
+[node name="WashM1" parent="." instance=ExtResource("68_lylhr")]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -1.458, 0.546, 10.587)
+
+[node name="WashM2" parent="." instance=ExtResource("69_shbf7")]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -1.519, 0.5, 9.135)
+
+[node name="Node3D" parent="." instance=ExtResource("66_ajmae")]
+transform = Transform3D(-3.934025e-08, 0, 0.9, 0, 0.9, 0, -0.9, 0, -3.934025e-08, 6.170178, 0.5791013, 5.3391)
 
 [editable path="RemoteSpawner"]
