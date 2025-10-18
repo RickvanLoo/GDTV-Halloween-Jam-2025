@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://d2vgv6ie0v40s"]
+[gd_scene load_steps=73 format=3 uid="uid://d2vgv6ie0v40s"]
 
 [ext_resource type="Script" uid="uid://cfkfntxeg2qe6" path="res://Levels/Main/Level0.gd" id="1_aqgjt"]
 [ext_resource type="PackedScene" uid="uid://bdupkh0grwy27" path="res://Player/Player.tscn" id="2_41uey"]
@@ -64,6 +64,7 @@
 [ext_resource type="PackedScene" uid="uid://bjrq6yqpehgs1" path="res://LicensedAssets/KayKit_Furniture_Bits_1.0_FREE/Assets/gltf/shelf_B_large_decorated.gltf" id="62_brsg6"]
 [ext_resource type="PackedScene" uid="uid://dwqpy3lde2wde" path="res://LicensedAssets/KayKit_Furniture_Bits_1.0_FREE/Assets/gltf/book_set.gltf" id="63_gvebp"]
 [ext_resource type="PackedScene" uid="uid://cpxgko8hieuja" path="res://LicensedAssets/KayKit_Furniture_Bits_1.0_FREE/Assets/gltf/shelf_B_small_decorated.gltf" id="64_7jvej"]
+[ext_resource type="AudioStream" uid="uid://b01ky7ktfcgfc" path="res://Sounds/ambient.ogg" id="65_8ekc2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3bgcu"]
 
@@ -465,5 +466,10 @@ transform = Transform3D(0.3717405, 0, 0.9283367, 0, 1, 0, -0.9283367, 0, 0.37174
 transform = Transform3D(1, 0, 0, 0, -0.5694803, -0.822005, 0, 0.822005, -0.5694803, 5.231262, 0, 9.9837265)
 
 [node name="HUD" parent="." instance=ExtResource("17_5vyxx")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("65_8ekc2")
+autoplay = true
+bus = &"Ambient"
 
 [editable path="RemoteSpawner"]
