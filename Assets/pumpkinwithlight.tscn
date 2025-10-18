@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3fgffvwm770s"]
+
+[ext_resource type="PackedScene" uid="uid://ctmad5g41fewt" path="res://LicensedAssets/KayKit_HalloweenBits_1.0_EXTRA/Assets/gltf/pumpkin_orange_jackolantern.gltf" id="1_6jkb1"]
+
+[node name="pumpkin_orange_jackolantern2" instance=ExtResource("1_6jkb1")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2871911, 0.584764, 0.56847805)
+light_color = Color(1, 0, 0, 1)
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 0.2
+omni_attenuation = 2.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26293746, 0.5984098, 0.61772645)
+light_color = Color(1, 0, 0, 1)
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 0.2
+omni_attenuation = 2.0
