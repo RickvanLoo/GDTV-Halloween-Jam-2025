@@ -1,6 +1,6 @@
 extends Node
 
-@export var starting_time = 10.0
+@export var starting_time = 120.0
 
 # The starting time in seconds
 var time_left: float = 0.0
