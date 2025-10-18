@@ -26,6 +26,9 @@ func game_over() -> void:
 	
 func start_game() -> void:
 	get_tree().change_scene_to_file("res://Levels/Main/Level0.tscn")
+	
+func start_menu() -> void:
+	get_tree().change_scene_to_file("res://Levels/Menu/start_menu.tscn")
 
 func reset_timer() -> void:
 	time_left = starting_time
