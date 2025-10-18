@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://d2vgv6ie0v40s"]
+[gd_scene load_steps=79 format=3 uid="uid://d2vgv6ie0v40s"]
 
 [ext_resource type="Script" uid="uid://cfkfntxeg2qe6" path="res://Levels/Main/Level0.gd" id="1_aqgjt"]
 [ext_resource type="PackedScene" uid="uid://bdupkh0grwy27" path="res://Player/Player.tscn" id="2_41uey"]
@@ -64,7 +64,13 @@
 [ext_resource type="PackedScene" uid="uid://bjrq6yqpehgs1" path="res://LicensedAssets/KayKit_Furniture_Bits_1.0_FREE/Assets/gltf/shelf_B_large_decorated.gltf" id="62_brsg6"]
 [ext_resource type="PackedScene" uid="uid://dwqpy3lde2wde" path="res://LicensedAssets/KayKit_Furniture_Bits_1.0_FREE/Assets/gltf/book_set.gltf" id="63_gvebp"]
 [ext_resource type="PackedScene" uid="uid://cpxgko8hieuja" path="res://LicensedAssets/KayKit_Furniture_Bits_1.0_FREE/Assets/gltf/shelf_B_small_decorated.gltf" id="64_7jvej"]
-[ext_resource type="AudioStream" uid="uid://b01ky7ktfcgfc" path="res://Sounds/ambient.ogg" id="65_8ekc2"]
+[ext_resource type="PackedScene" uid="uid://dcgfjr4xdih6u" path="res://LicensedAssets/Bathroom_Assets/Shower.tscn" id="65_8ekc2"]
+[ext_resource type="PackedScene" uid="uid://bpo6reguhkudg" path="res://LicensedAssets/Bathroom_Assets/Bathtub.tscn" id="66_ajmae"]
+[ext_resource type="PackedScene" uid="uid://c35fvs7cijaaw" path="res://LicensedAssets/Bathroom_Assets/Sink.tscn" id="66_u8kh4"]
+[ext_resource type="PackedScene" uid="uid://dbc8terlubi74" path="res://LicensedAssets/Bathroom_Assets/Toilet.tscn" id="67_brsg6"]
+[ext_resource type="PackedScene" uid="uid://ho363dl2d2co" path="res://LicensedAssets/Bathroom_Assets/Wasmachine1.tscn" id="68_lylhr"]
+[ext_resource type="PackedScene" uid="uid://c5uoq012tpxe4" path="res://LicensedAssets/Bathroom_Assets/Wasmachine2.tscn" id="69_shbf7"]
+[ext_resource type="AudioStream" uid="uid://b01ky7ktfcgfc" path="res://Sounds/ambient.ogg" id="71_lylhr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3bgcu"]
 
@@ -443,6 +449,26 @@ transform = Transform3D(-0.78052866, 0, -0.6251201, 0, 1, 0, 0.6251201, 0, -0.78
 [node name="shelf_B_small_decorated2" parent="Environment/IndoorProps" instance=ExtResource("64_7jvej")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -15.25963, 1.8677622, 4.2975273)
 
+[node name="Bathroom" type="Node3D" parent="Environment/IndoorProps"]
+
+[node name="Shower" parent="Environment/IndoorProps/Bathroom" instance=ExtResource("65_8ekc2")]
+transform = Transform3D(-3.934025e-08, 0, -0.9, 0, 0.9, 0, 0.9, 0, -3.934025e-08, 7.5755734, 0.50000024, 5.0435123)
+
+[node name="Sink" parent="Environment/IndoorProps/Bathroom" instance=ExtResource("66_u8kh4")]
+transform = Transform3D(-3.934025e-08, 0, 0.9, 0, 0.9, 0, -0.9, 0, -3.934025e-08, 2.012, 0.5, 11.194)
+
+[node name="Toilet" parent="Environment/IndoorProps/Bathroom" instance=ExtResource("67_brsg6")]
+transform = Transform3D(-3.934025e-08, 0, 0.9, 0, 0.9, 0, -0.9, 0, -3.934025e-08, 8.394227, 0.50000024, 11.705382)
+
+[node name="WashM1" parent="Environment/IndoorProps/Bathroom" instance=ExtResource("68_lylhr")]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -1.458, 0.546, 10.587)
+
+[node name="WashM2" parent="Environment/IndoorProps/Bathroom" instance=ExtResource("69_shbf7")]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -1.519, 0.5, 9.135)
+
+[node name="Tub" parent="Environment/IndoorProps/Bathroom" instance=ExtResource("66_ajmae")]
+transform = Transform3D(-3.934025e-08, 0, 0.9, 0, 0.9, 0, -0.9, 0, -3.934025e-08, 6.170178, 0.5791013, 5.3391)
+
 [node name="Lighting" type="Node" parent="."]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting"]
@@ -468,7 +494,7 @@ transform = Transform3D(1, 0, 0, 0, -0.5694803, -0.822005, 0, 0.822005, -0.56948
 [node name="HUD" parent="." instance=ExtResource("17_5vyxx")]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("65_8ekc2")
+stream = ExtResource("71_lylhr")
 autoplay = true
 bus = &"Ambient"
 

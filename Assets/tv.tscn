@@ -631,14 +631,8 @@ skeleton = NodePath("")
 
 [node name="Cube_002_15" type="Node3D" parent="StaticBody3D/MeshCollection"]
 
-[node name="EmissiveScreen" type="MeshInstance3D" parent="StaticBody3D/MeshCollection/Cube_002_15"]
-mesh = SubResource("ArrayMesh_jn44f")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_ntryi")
-
-[node name="Label3D" type="Label3D" parent="StaticBody3D/MeshCollection/Cube_002_15/EmissiveScreen"]
+[node name="Label3D" type="Label3D" parent="StaticBody3D/MeshCollection/Cube_002_15"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0010118486, 1.2809005, 0.53399324)
-modulate = Color(0, 0, 0, 1)
 text = "FIND THE
 REMOTE
 OR ELSE"
@@ -647,6 +641,11 @@ font_size = 60
 outline_size = 0
 uppercase = true
 line_spacing = -32.0
+
+[node name="EmissiveScreen" type="MeshInstance3D" parent="StaticBody3D/MeshCollection/Cube_002_15"]
+mesh = SubResource("ArrayMesh_jn44f")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ntryi")
 
 [node name="Cube_009_16" type="Node3D" parent="StaticBody3D/MeshCollection"]
 
