@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=4 uid="uid://ca1qv8v0fhoj6"]
+[gd_scene load_steps=19 format=4 uid="uid://ca1qv8v0fhoj6"]
 
 [ext_resource type="Script" uid="uid://p62tcf7gsah6" path="res://Assets/Remote/interact_area.gd" id="2_4nmhd"]
 [ext_resource type="Script" uid="uid://eyht72drdc8x" path="res://Assets/Remote/remote_spawner.gd" id="2_dbw0l"]
+[ext_resource type="AudioStream" uid="uid://dunesrmb5knwi" path="res://Sounds/spark.ogg" id="3_hp371"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_3mtnf"]
 _surfaces = [{
@@ -186,6 +187,7 @@ top_level = true
 script = ExtResource("2_dbw0l")
 
 [node name="Remote" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
 
 [node name="RigidBody3D" type="RigidBody3D" parent="Remote"]
 
@@ -222,6 +224,12 @@ script = ExtResource("2_4nmhd")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Remote/RigidBody3D/InteractArea"]
 shape = SubResource("BoxShape3D_jhlxh")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Remote"]
+stream = ExtResource("3_hp371")
+volume_db = -15.0
+unit_size = 2.0
+bus = &"Soundeffects"
 
 [node name="Locations" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
