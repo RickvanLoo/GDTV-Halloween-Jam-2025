@@ -1,4 +1,4 @@
-[gd_scene load_steps=141 format=4 uid="uid://d2vgv6ie0v40s"]
+[gd_scene load_steps=142 format=4 uid="uid://d2vgv6ie0v40s"]
 
 [ext_resource type="Script" uid="uid://cfkfntxeg2qe6" path="res://Levels/Main/Level0.gd" id="1_aqgjt"]
 [ext_resource type="PackedScene" uid="uid://bdupkh0grwy27" path="res://Player/Player.tscn" id="2_41uey"]
@@ -87,6 +87,7 @@
 [ext_resource type="PackedScene" uid="uid://bcl2nifji6jgb" path="res://Assets/skull_candle_blue.tscn" id="82_ql1b3"]
 [ext_resource type="LightmapGIData" uid="uid://bnahtc2tt63jc" path="res://Levels/Main/LightMap/Level0.lmbake" id="86_0bb6m"]
 [ext_resource type="PackedScene" uid="uid://d2mcg2pqou24s" path="res://Assets/lamp_square_ceiling.tscn" id="86_5udua"]
+[ext_resource type="PackedScene" uid="uid://mji3x2u4b0gr" path="res://LicensedAssets/KayKit_HalloweenBits_1.0_EXTRA/Assets/gltf/crypt.gltf" id="88_ql1b3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hmj3j"]
 resource_name = "restaurant"
@@ -1325,6 +1326,9 @@ autoplay = true
 bus = &"Ambient"
 
 [node name="LightmapGI" type="LightmapGI" parent="."]
+quality = 2
+supersampling = true
+supersampling_factor = 4.0
 light_data = ExtResource("86_0bb6m")
 
 [node name="CeilingLights" type="Node3D" parent="."]
@@ -1348,6 +1352,32 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.7978277, 0, 2.4814818)
 [node name="lampSquareCeiling6" parent="CeilingLights" instance=ExtResource("86_5udua")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4929266, 0, 5.919573)
 
+[node name="OutdoorProps" type="Node3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -9.44726, 3.6013324, -7.8491316)
+
+[node name="crypt2" parent="OutdoorProps" instance=ExtResource("88_ql1b3")]
+transform = Transform3D(0.33333334, 0, 0, 0, 0.33333334, 0, 0, 0, 0.33333334, 3.7292314, -1.2004442, -9.182505)
+
+[node name="skull_candle2" parent="OutdoorProps" instance=ExtResource("81_0bb6m")]
+transform = Transform3D(0.33333334, 0, 0, 0, 0.33333334, 0, 0, 0, 0.33333334, 4.58592, 0.25433207, -7.778872)
+
+[node name="OmniLight3D" parent="OutdoorProps/skull_candle2" index="1"]
+omni_range = 30.0
+
+[node name="OmniLight3D2" parent="OutdoorProps/skull_candle2" index="2"]
+omni_range = 30.0
+
+[node name="skull_candle3" parent="OutdoorProps" instance=ExtResource("81_0bb6m")]
+transform = Transform3D(0.33333334, 0, 0, 0, 0.33333334, 0, 0, 0, 0.33333334, 2.916974, 0.25433207, -7.778872)
+
+[node name="OmniLight3D" parent="OutdoorProps/skull_candle3" index="1"]
+omni_range = 30.0
+
+[node name="OmniLight3D2" parent="OutdoorProps/skull_candle3" index="2"]
+omni_range = 30.0
+
 [editable path="RemoteSpawner"]
 [editable path="CeilingLights/lampSquareCeiling2"]
 [editable path="CeilingLights/lampSquareCeiling3"]
+[editable path="OutdoorProps/skull_candle2"]
+[editable path="OutdoorProps/skull_candle3"]
