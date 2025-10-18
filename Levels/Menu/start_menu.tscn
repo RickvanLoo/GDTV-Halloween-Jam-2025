@@ -138,7 +138,7 @@ script = ExtResource("3_b1o7j")
 
 [node name="StartMenuMusicPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_b1o7j")
-volume_db = -10.0
 autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
