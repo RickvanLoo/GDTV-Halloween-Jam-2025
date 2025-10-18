@@ -325,7 +325,6 @@ transparency = 1
 albedo_color = Color(0, 0, 0, 1)
 emission_enabled = true
 emission = Color(0.98039216, 0.98039216, 0.98039216, 1)
-emission_energy_multiplier = 10.0
 normal_scale = 1.85
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_xuat0"]
@@ -693,10 +692,15 @@ skeleton = NodePath("")
 
 [node name="FlickeringStatic" type="Node3D" parent="."]
 script = ExtResource("2_ntryi")
+max_energy = 5.0
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="FlickeringStatic"]
 stream = SubResource("AudioStreamGenerator_ntryi")
 
-[node name="Light" type="OmniLight3D" parent="FlickeringStatic"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2690704, 0.77682066)
-light_energy = 5.09
+[node name="Light" type="SpotLight3D" parent="FlickeringStatic"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1.2976047, 0.63702965)
+light_energy = 5.0
+light_volumetric_fog_energy = 5.0
+spot_range = 10.0
+spot_attenuation = 0.4
+spot_angle = 75.0

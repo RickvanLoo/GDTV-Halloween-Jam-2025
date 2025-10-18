@@ -53,7 +53,6 @@ func _process(delta: float) -> void:
 		light.light_energy = LightValue
 		emissive_screen.get_surface_override_material(0).emission_energy = LightValue
 		
-	
 		
 		
 	if not playback:

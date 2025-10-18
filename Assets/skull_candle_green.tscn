@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://bb653467y4v41"]
+
+[ext_resource type="PackedScene" uid="uid://cixibr1clf6li" path="res://LicensedAssets/KayKit_HalloweenBits_1.0_EXTRA/Assets/gltf/skull_candle.gltf" id="1_m6yab"]
+
+[node name="skull_candle2" instance=ExtResource("1_m6yab")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="1"]
+transform = Transform3D(0.9979055, 0.06468906, 0, -0.06468906, 0.9979055, 0, 0, 0, 1, -0.18048468, 0.45183492, 0.3065136)
+light_color = Color(0, 0.48235294, 0.07058824, 1)
+light_indirect_energy = 3.0
+shadow_enabled = true
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." index="2"]
+transform = Transform3D(0.9979055, 0.06468906, 0, -0.06468906, 0.9979055, 0, 0, 0, 1, 0.19175088, 0.45183492, 0.3065136)
+light_color = Color(0, 0.48235294, 0.07058824, 1)
+light_indirect_energy = 3.0
+shadow_enabled = true
