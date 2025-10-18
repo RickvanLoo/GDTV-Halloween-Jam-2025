@@ -8,6 +8,8 @@ var opened: bool = false
 var player_nearby: bool = false
 var is_moving: bool = false
 
+@onready var door_sound: AudioStreamPlayer3D = $"../AudioStreamPlayer3D"
+
 func setDefaultRotation(val: float):
 	rotation.y = deg_to_rad(val)
 
@@ -25,7 +27,7 @@ func _input(event: InputEvent) -> void:
 
 func toggle_state() -> void:
 	is_moving = true
-
+	door_sound.play()
 	# Flip the 'opened' state.
 	opened = not opened
 
