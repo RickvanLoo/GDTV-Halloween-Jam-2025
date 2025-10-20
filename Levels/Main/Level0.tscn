@@ -1109,7 +1109,7 @@ transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -12.376948, 1.5000005, 
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -12.064978, 1.5000005, -3.4121299)
 
 [node name="Can_B3" parent="Environment/IndoorProps" instance=ExtResource("53_1dj4w")]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -13.331654, 1.5000005, -3.248659)
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -13.0062685, 1.5000005, -2.9442835)
 
 [node name="Dummy_Base2" parent="Environment/IndoorProps" instance=ExtResource("54_2fs8t")]
 transform = Transform3D(0.9891342, 0, -0.14701533, 0, 1, 0, 0.14701533, 0, 0.9891342, -8.405402, 0.5, -11.253633)
@@ -1166,7 +1166,7 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -4.9
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2.7148042, 1.6577984, 9.522949)
 
 [node name="book_set2" parent="Environment/IndoorProps" instance=ExtResource("63_gvebp")]
-transform = Transform3D(0.97965586, 0, 0.20068468, 0, 1, 0, -0.20068468, 0, 0.97965586, 11.5702915, 1.7602603, -10.7645235)
+transform = Transform3D(0.98949313, 0, 0.14458072, 0, 1, 0, -0.14458072, 0, 0.98949313, 11.593097, 1.7602603, -10.685212)
 
 [node name="cabinet_medium5" parent="Environment/IndoorProps" instance=ExtResource("12_uxxym")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.961803, 0.50000024, -1.3784704)
@@ -1310,13 +1310,106 @@ directional_shadow_max_distance = 250.0
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -12.129154, 1.2788404, 2.218402)
 
 [node name="Remote" parent="RemoteSpawner" index="0"]
-transform = Transform3D(0.3717405, 0, 0.9283367, 0, 1, 0, -0.9283367, 0, 0.3717405, -3.3916664, 1.3941307, 16.03727)
+transform = Transform3D(0.06994797, 0, -0.99755067, 0, 1, 0, 0.99755067, 0, 0.06994797, 21.486881, 2.386801, 14.96044)
 
-[node name="0" parent="RemoteSpawner/Locations" index="0"]
-transform = Transform3D(0.3717405, 0, 0.9283367, 0, 1, 0, -0.9283367, 0, 0.3717405, -4.3916664, 1.3941307, 15.03727)
+[node name="RigidBody3D" parent="RemoteSpawner/Remote" index="0"]
+transform = Transform3D(-0.9975495, 0, 0.06994783, 0, 0.9999999, 0, -0.069947846, 0, -0.99754924, -0.67177963, -1.3939426, 24.975147)
 
-[node name="1" parent="RemoteSpawner/Locations" index="1"]
-transform = Transform3D(1, 0, 0, 0, -0.5694803, -0.822005, 0, 0.822005, -0.5694803, 5.231262, 0, 9.9837265)
+[node name="TVKast" type="Marker3D" parent="RemoteSpawner/Locations" index="0"]
+transform = Transform3D(-1.0265782e-08, 0.97203064, 0.23485371, 4.2488807e-08, 0.23485371, -0.97203064, -0.9999999, 5.0984645e-15, -4.371137e-08, -4.666582, 2.9135811, 15.113867)
+
+[node name="SofaLivingRoom" type="Marker3D" parent="RemoteSpawner/Locations" index="1"]
+transform = Transform3D(1, 0, 0, 0, -0.5694803, -0.822005, 0, 0.822005, -0.5694803, 5.268156, 0.13682365, 9.9837265)
+
+[node name="BehindSofaBedroom" type="Marker3D" parent="RemoteSpawner/Locations" index="2"]
+transform = Transform3D(0.8038257, 0, 0.59486485, 0, 1, 0, -0.59486485, 0, 0.8038257, 15.88648, -0.6023996, -14.120413)
+
+[node name="TableLivingRoom" type="Marker3D" parent="RemoteSpawner/Locations" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.861301, 0.92677736, -4.4639406)
+
+[node name="BlueSkull" type="Marker3D" parent="RemoteSpawner/Locations" index="4"]
+transform = Transform3D(0.29730818, 0, 0.9547816, 0, 1, 0, -0.9547816, 0, 0.29730818, 19.952692, 1.338716, -2.2462451)
+
+[node name="SinkKitchen" type="Marker3D" parent="RemoteSpawner/Locations" index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.448364, 1.5916173, -18.51135)
+
+[node name="FridgeKitchen" type="Marker3D" parent="RemoteSpawner/Locations" index="6"]
+transform = Transform3D(0.89530784, 0, 0.4454479, 0, 1, 0, -0.4454479, 0, 0.89530784, 21.776674, 5.2075768, -10.388433)
+
+[node name="PanKeuken" type="Marker3D" parent="RemoteSpawner/Locations" index="7"]
+transform = Transform3D(-0.80952966, 0, 0.587079, 0, 1, 0, -0.587079, 0, -0.80952966, 30.526848, 1.4367871, -20.986782)
+
+[node name="VoedingKastKeuken" type="Marker3D" parent="RemoteSpawner/Locations" index="8"]
+transform = Transform3D(-0.05594352, 0, -0.99843395, 0, 1, 0, 0.99843395, 0, -0.05594352, 22.348616, 1.4288905, -21.194363)
+
+[node name="Stove" type="Marker3D" parent="RemoteSpawner/Locations" index="9"]
+transform = Transform3D(0.03544025, -0.38026652, -0.92419773, 0, 0.92477864, -0.38050553, 0.9993718, 0.013485212, 0.03277439, 39.00086, 2.0002644, -10.408712)
+
+[node name="Oven" type="Marker3D" parent="RemoteSpawner/Locations" index="10"]
+transform = Transform3D(0.06994797, 0, -0.99755067, 0, 1, 0, 0.99755067, 0, 0.06994797, 38.36416, 4.0773954, -25.665066)
+
+[node name="SingleBedRight" type="Marker3D" parent="RemoteSpawner/Locations" index="11"]
+transform = Transform3D(0.06994797, 0, -0.99755067, 0, 1, 0, 0.99755067, 0, 0.06994797, 10.494709, 0.9072857, -23.38025)
+
+[node name="BurgerTable" type="Marker3D" parent="RemoteSpawner/Locations" index="12"]
+transform = Transform3D(0.06994797, 0, -0.99755067, 0, 1, 0, 0.99755067, 0, 0.06994797, -3.626566, 0.93335176, -12.271481)
+
+[node name="SingleBedLeftFloor" type="Marker3D" parent="RemoteSpawner/Locations" index="13"]
+transform = Transform3D(0.9470198, 0, 0.32117498, 0, 1, 0, -0.32117498, 0, 0.9470198, -6.5946255, -0.99068785, -21.456354)
+
+[node name="SofaBlueBedroom" type="Marker3D" parent="RemoteSpawner/Locations" index="14"]
+transform = Transform3D(0.06994797, 0, -0.99755067, 0, 1, 0, 0.99755067, 0, 0.06994797, 12.69218, 0.5947764, -15.371873)
+
+[node name="StoolLivingRoom" type="Marker3D" parent="RemoteSpawner/Locations" index="15"]
+transform = Transform3D(0.06994797, 0, -0.99755067, 0, 1, 0, 0.99755067, 0, 0.06994797, 16.426476, -0.024138689, 11.271372)
+
+[node name="BooksLivingRoom" type="Marker3D" parent="RemoteSpawner/Locations" index="16"]
+transform = Transform3D(0.5914222, 0, 0.8063619, 0, 1, 0, -0.8063619, 0, 0.5914222, -2.8172894, 0.33662844, -5.3701744)
+
+[node name="Toilet" type="Marker3D" parent="RemoteSpawner/Locations" index="17"]
+transform = Transform3D(0.06994797, 0, -0.99755067, 0, 1, 0, 0.99755067, 0, 0.06994797, 39.947243, 0.984504, 16.982582)
+
+[node name="WashMachine" type="Marker3D" parent="RemoteSpawner/Locations" index="18"]
+transform = Transform3D(0.06994797, 0, -0.99755067, 0, 1, 0, 0.99755067, 0, 0.06994797, 20.486881, 2.386801, 13.96044)
+
+[node name="CandyBuckets" type="Marker3D" parent="RemoteSpawner/Locations" index="19"]
+transform = Transform3D(-0.79659325, 0, 0.60451573, 0, 1, 0, -0.60451573, 0, -0.79659325, 57.919678, -0.14350343, 16.73702)
+
+[node name="CoffinCorner" type="Marker3D" parent="RemoteSpawner/Locations" index="20"]
+transform = Transform3D(0.85994136, 0, 0.5103928, 0, 1, 0, -0.5103928, 0, 0.85994136, 43.898125, -0.0066068172, 4.2376976)
+
+[node name="HayEntrance" type="Marker3D" parent="RemoteSpawner/Locations" index="21"]
+transform = Transform3D(0.47116584, 0, -0.88204455, 0, 1, 0, 0.88204455, 0, 0.47116584, 56.90775, 1.176667, 4.6778746)
+
+[node name="BoxesCorner" type="Marker3D" parent="RemoteSpawner/Locations" index="22"]
+transform = Transform3D(0.93359286, 0, -0.35833538, 0, 1, 0, 0.35833538, 0, 0.93359286, 57.935505, -0.060165644, -14.632554)
+
+[node name="TableFlippedBehind" type="Marker3D" parent="RemoteSpawner/Locations" index="23"]
+transform = Transform3D(-0.2090724, 0, 0.97790015, 0, 1, 0, -0.97790015, 0, -0.2090724, 55.75405, -0.68588185, -4.83496)
+
+[node name="BarrelPalletTop" type="Marker3D" parent="RemoteSpawner/Locations" index="24"]
+transform = Transform3D(0.24000779, 0, -0.97077084, 0, 1, 0, 0.97077084, 0, 0.24000779, 44.5586, 4.9177103, -11.220111)
+
+[node name="BlueTableStorageUnderneath" type="Marker3D" parent="RemoteSpawner/Locations" index="25"]
+transform = Transform3D(0.5532752, 0, -0.8329985, 0, 1, 0, 0.8329985, 0, 0.5532752, 57.439884, -0.9199977, -1.2561488)
+
+[node name="MasterBedroomChair" type="Marker3D" parent="RemoteSpawner/Locations" index="26"]
+transform = Transform3D(-0.22069743, 0, 0.97534245, 0, 1, 0, -0.97534245, 0, -0.22069743, 46.74323, 0.086223125, -19.51372)
+
+[node name="MasterBedroomLoungeChair" type="Marker3D" parent="RemoteSpawner/Locations" index="27"]
+transform = Transform3D(0.12593922, 0, -0.9920379, 0, 1, 0, 0.9920379, 0, 0.12593922, 57.349804, 0.19395876, -19.490978)
+
+[node name="LivingRoomLoungeChair" type="Marker3D" parent="RemoteSpawner/Locations" index="28"]
+transform = Transform3D(0.53200454, 0, 0.8467414, 0, 1, 0, -0.8467414, 0, 0.53200454, -0.027135849, -0.082859516, 3.746647)
+
+[node name="EntrancePumpkinsBehind" type="Marker3D" parent="RemoteSpawner/Locations" index="29"]
+transform = Transform3D(-0.75470954, 0, -0.65605885, 0, 1, 0, 0.65605885, 0, -0.75470954, 43.67728, 0.2897699, 17.602798)
+
+[node name="MasterBedroomBooksBehind" type="Marker3D" parent="RemoteSpawner/Locations" index="30"]
+transform = Transform3D(0.06994794, 0, -0.9975506, -0.09432847, 0.99551916, -0.006614284, 0.99308074, 0.094560094, 0.06963452, 46.239304, 0.80091786, -27.774958)
+
+[node name="SkullGreenFloor" type="Marker3D" parent="RemoteSpawner/Locations" index="31"]
+transform = Transform3D(-0.73395514, 0, -0.6791979, 0, 1, 0, 0.6791979, 0, -0.73395514, 40.501617, 0.09368086, -6.6371727)
 
 [node name="HUD" parent="." instance=ExtResource("17_5vyxx")]
 
@@ -1326,9 +1419,11 @@ autoplay = true
 bus = &"Ambient"
 
 [node name="LightmapGI" type="LightmapGI" parent="."]
-quality = 2
+quality = 3
 supersampling = true
 supersampling_factor = 4.0
+interior = true
+texel_scale = 1.2
 light_data = ExtResource("86_0bb6m")
 
 [node name="CeilingLights" type="Node3D" parent="."]

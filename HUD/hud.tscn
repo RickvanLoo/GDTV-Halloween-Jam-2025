@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://fanblohddmv6"]
+[gd_scene load_steps=4 format=3 uid="uid://fanblohddmv6"]
 
 [ext_resource type="Script" uid="uid://b5nb8q43safte" path="res://HUD/crosshair_color_rect.gd" id="1_h61sl"]
 [ext_resource type="Script" uid="uid://dp6cmobyuttpa" path="res://HUD/hud.gd" id="1_mi5n8"]
+
+[sub_resource type="Gradient" id="Gradient_mi5n8"]
+offsets = PackedFloat32Array(0.4024024, 0.8438438, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 0.46607447, 0.16527405, 1, 1, 0, 0, 1)
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -12,6 +16,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_mi5n8")
+time_gradient = SubResource("Gradient_mi5n8")
 
 [node name="CrosshairCanvasLayer" type="CanvasLayer" parent="."]
 layer = 100
@@ -31,4 +36,15 @@ offset_left = -20.0
 offset_right = 20.0
 offset_bottom = 23.0
 grow_horizontal = 2
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 26
 text = "TEST"
+
+[node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 1
+offset_left = 8.0
+offset_right = 126.0
+offset_bottom = 34.0
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 24
+text = "Score: 123"

@@ -20,6 +20,7 @@ func _ready() -> void:
 	
 	set_process_input(fast_close)
 	GlobalState.reset_timer()
+	GlobalState.reset_score()
 
 
 func _input(event: InputEvent) -> void:

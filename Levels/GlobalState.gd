@@ -1,10 +1,12 @@
 extends Node
 
-@export var starting_time = 120.0
+@export var starting_time = 60.0
+@export var max_time = 60.0
 
 # The starting time in seconds
 var time_left: float = 0.0
 var timer_running: bool = false
+var score: int = 0
 
 # This function runs every frame
 func _process(delta: float) -> void:
@@ -19,7 +21,13 @@ func _process(delta: float) -> void:
 
 # A function to add time to the timer, callable from anywhere
 func add_time(amount: float) -> void:
-	time_left += amount
+	if time_left + amount > max_time:
+		time_left = max_time
+	else:
+		time_left += amount
+	
+func add_score(amount: int) -> void:
+	score += amount
 
 func game_over() -> void:
 	get_tree().change_scene_to_file("res://Levels/Menu/game_over.tscn")
@@ -33,3 +41,6 @@ func start_menu() -> void:
 func reset_timer() -> void:
 	time_left = starting_time
 	timer_running = true
+	
+func reset_score() -> void:
+	score = 0

@@ -1,18 +1,29 @@
 @tool
 extends Node3D
 
-@export var time_score = 10.0
+@export var time_score = 20.0
+@export var click_score: int = 1
+@export var debug_value: int = 0
 
-@onready var Remote = get_node("Remote")
+@onready var Remote = get_node("Remote/RigidBody3D")
 @onready var Locations = get_node("Locations").get_children(true)
+@onready var spark_sound: AudioStreamPlayer3D = $Remote/RigidBody3D/AudioStreamPlayer3D
 
 var current_location_index = 0
 
 ## setPosition sets the "Remote" position to one of the set Marker3Ds within "Locations".
-func setPosition(index: int) -> void:
+func setPosition(index: int, playSound: bool) -> void:
+	if debug_value > 0:
+		print("Setting to "+str(index)+" name: "+str(Locations[index].name))
+	
 	current_location_index = index
+	# Wait for the scene tree to process
+	await get_tree().process_frame
+
 	Remote.global_position = Locations[index].global_position
 	Remote.global_rotation = Locations[index].global_rotation
+	if playSound:
+		spark_sound.play()
 
 ## getSemiRandomIndex returns a "random" index of the locations, but makes sure it's different than the previous.
 func getSemiRandomLocation() -> int:
@@ -23,8 +34,12 @@ func getSemiRandomLocation() -> int:
 	return random_index
 
 func _ready():
-	setPosition(0) # Always start at location 0
+	if debug_value > 0:
+		setPosition(debug_value, false)
+	else:	
+		setPosition(0, false) # Always start at location 0
 	
 func _on_interact_area_remote_interacted() -> void:
-	setPosition(getSemiRandomLocation())
+	setPosition(getSemiRandomLocation(), true)
 	GlobalState.add_time(time_score)
+	GlobalState.add_score(click_score)
