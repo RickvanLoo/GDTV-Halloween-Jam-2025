@@ -1313,10 +1313,10 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -12.129154, 1.2788404, 
 transform = Transform3D(0.06994797, 0, -0.99755067, 0, 1, 0, 0.99755067, 0, 0.06994797, 21.486881, 2.386801, 14.96044)
 
 [node name="RigidBody3D" parent="RemoteSpawner/Remote" index="0"]
-transform = Transform3D(0.06994787, 0.40999573, -0.9094005, -7.969754e-08, -0.91163415, -0.4110022, -0.99754995, 0.028748838, -0.06376683, -5.031492, -2.2499774, 14.903285)
+transform = Transform3D(-0.9975495, 0, 0.06994783, 0, 0.9999999, 0, -0.069947846, 0, -0.99754924, -0.67177963, -1.3939426, 24.975147)
 
 [node name="TVKast" type="Marker3D" parent="RemoteSpawner/Locations" index="0"]
-transform = Transform3D(-4.3711385e-08, 0, 0.9999999, 0, 1, 0, -0.9999999, 0, -4.3711385e-08, -4.474085, 0.9928584, 15.03727)
+transform = Transform3D(-1.0265782e-08, 0.97203064, 0.23485371, 4.2488807e-08, 0.23485371, -0.97203064, -0.9999999, 5.0984645e-15, -4.371137e-08, -4.666582, 2.9135811, 15.113867)
 
 [node name="SofaLivingRoom" type="Marker3D" parent="RemoteSpawner/Locations" index="1"]
 transform = Transform3D(1, 0, 0, 0, -0.5694803, -0.822005, 0, 0.822005, -0.5694803, 5.268156, 0.13682365, 9.9837265)
@@ -1419,9 +1419,11 @@ autoplay = true
 bus = &"Ambient"
 
 [node name="LightmapGI" type="LightmapGI" parent="."]
-quality = 2
+quality = 3
 supersampling = true
 supersampling_factor = 4.0
+interior = true
+texel_scale = 1.2
 light_data = ExtResource("86_0bb6m")
 
 [node name="CeilingLights" type="Node3D" parent="."]
