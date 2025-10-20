@@ -865,7 +865,6 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 18.5
 
 [node name="Ceiling" type="MeshInstance3D" parent="Environment"]
 transform = Transform3D(1, 0, 0, 0, 2.472941, 0, 0, 0, 1, 1.609, 4.387, 0.434)
-visible = false
 material_override = SubResource("StandardMaterial3D_lylhr")
 mesh = SubResource("BoxMesh_shbf7")
 skeleton = NodePath("")
@@ -1167,7 +1166,7 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -4.9
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2.7148042, 1.6577984, 9.522949)
 
 [node name="book_set2" parent="Environment/IndoorProps" instance=ExtResource("63_gvebp")]
-transform = Transform3D(0.97965586, 0, 0.20068468, 0, 1, 0, -0.20068468, 0, 0.97965586, 11.5702915, 1.7602603, -10.7645235)
+transform = Transform3D(0.98949313, 0, 0.14458072, 0, 1, 0, -0.14458072, 0, 0.98949313, 11.593097, 1.7602603, -10.685212)
 
 [node name="cabinet_medium5" parent="Environment/IndoorProps" instance=ExtResource("12_uxxym")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.961803, 0.50000024, -1.3784704)
@@ -1309,11 +1308,12 @@ directional_shadow_max_distance = 250.0
 
 [node name="RemoteSpawner" parent="." instance=ExtResource("16_xin5v")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -12.129154, 1.2788404, 2.218402)
-time_score = 10.0
-debug_value = 18
 
 [node name="Remote" parent="RemoteSpawner" index="0"]
 transform = Transform3D(0.06994797, 0, -0.99755067, 0, 1, 0, 0.99755067, 0, 0.06994797, 21.486881, 2.386801, 14.96044)
+
+[node name="RigidBody3D" parent="RemoteSpawner/Remote" index="0"]
+transform = Transform3D(0.06994787, 0.40999573, -0.9094005, -7.969754e-08, -0.91163415, -0.4110022, -0.99754995, 0.028748838, -0.06376683, -5.031492, -2.2499774, 14.903285)
 
 [node name="TVKast" type="Marker3D" parent="RemoteSpawner/Locations" index="0"]
 transform = Transform3D(-4.3711385e-08, 0, 0.9999999, 0, 1, 0, -0.9999999, 0, -4.3711385e-08, -4.474085, 0.9928584, 15.03727)
@@ -1372,20 +1372,44 @@ transform = Transform3D(0.06994797, 0, -0.99755067, 0, 1, 0, 0.99755067, 0, 0.06
 [node name="WashMachine" type="Marker3D" parent="RemoteSpawner/Locations" index="18"]
 transform = Transform3D(0.06994797, 0, -0.99755067, 0, 1, 0, 0.99755067, 0, 0.06994797, 20.486881, 2.386801, 13.96044)
 
-[node name="19" type="Marker3D" parent="RemoteSpawner/Locations" index="19"]
-transform = Transform3D(0.06994797, 0, -0.99755067, 0, 1, 0, 0.99755067, 0, 0.06994797, 10.48185, 4.0773954, 10.18084)
+[node name="CandyBuckets" type="Marker3D" parent="RemoteSpawner/Locations" index="19"]
+transform = Transform3D(-0.79659325, 0, 0.60451573, 0, 1, 0, -0.60451573, 0, -0.79659325, 57.919678, -0.14350343, 16.73702)
 
-[node name="20" type="Marker3D" parent="RemoteSpawner/Locations" index="20"]
-transform = Transform3D(0.06994797, 0, -0.99755067, 0, 1, 0, 0.99755067, 0, 0.06994797, 10.48185, 4.0773954, 10.18084)
+[node name="CoffinCorner" type="Marker3D" parent="RemoteSpawner/Locations" index="20"]
+transform = Transform3D(0.85994136, 0, 0.5103928, 0, 1, 0, -0.5103928, 0, 0.85994136, 43.898125, -0.0066068172, 4.2376976)
 
-[node name="21" type="Marker3D" parent="RemoteSpawner/Locations" index="21"]
-transform = Transform3D(0.06994797, 0, -0.99755067, 0, 1, 0, 0.99755067, 0, 0.06994797, 10.48185, 4.0773954, 10.18084)
+[node name="HayEntrance" type="Marker3D" parent="RemoteSpawner/Locations" index="21"]
+transform = Transform3D(0.47116584, 0, -0.88204455, 0, 1, 0, 0.88204455, 0, 0.47116584, 56.90775, 1.176667, 4.6778746)
 
-[node name="22" type="Marker3D" parent="RemoteSpawner/Locations" index="22"]
-transform = Transform3D(0.06994797, 0, -0.99755067, 0, 1, 0, 0.99755067, 0, 0.06994797, 10.48185, 4.0773954, 10.18084)
+[node name="BoxesCorner" type="Marker3D" parent="RemoteSpawner/Locations" index="22"]
+transform = Transform3D(0.93359286, 0, -0.35833538, 0, 1, 0, 0.35833538, 0, 0.93359286, 57.935505, -0.060165644, -14.632554)
 
-[node name="23" type="Marker3D" parent="RemoteSpawner/Locations" index="23"]
-transform = Transform3D(0.06994797, 0, -0.99755067, 0, 1, 0, 0.99755067, 0, 0.06994797, 10.48185, 4.0773954, 10.18084)
+[node name="TableFlippedBehind" type="Marker3D" parent="RemoteSpawner/Locations" index="23"]
+transform = Transform3D(-0.2090724, 0, 0.97790015, 0, 1, 0, -0.97790015, 0, -0.2090724, 55.75405, -0.68588185, -4.83496)
+
+[node name="BarrelPalletTop" type="Marker3D" parent="RemoteSpawner/Locations" index="24"]
+transform = Transform3D(0.24000779, 0, -0.97077084, 0, 1, 0, 0.97077084, 0, 0.24000779, 44.5586, 4.9177103, -11.220111)
+
+[node name="BlueTableStorageUnderneath" type="Marker3D" parent="RemoteSpawner/Locations" index="25"]
+transform = Transform3D(0.5532752, 0, -0.8329985, 0, 1, 0, 0.8329985, 0, 0.5532752, 57.439884, -0.9199977, -1.2561488)
+
+[node name="MasterBedroomChair" type="Marker3D" parent="RemoteSpawner/Locations" index="26"]
+transform = Transform3D(-0.22069743, 0, 0.97534245, 0, 1, 0, -0.97534245, 0, -0.22069743, 46.74323, 0.086223125, -19.51372)
+
+[node name="MasterBedroomLoungeChair" type="Marker3D" parent="RemoteSpawner/Locations" index="27"]
+transform = Transform3D(0.12593922, 0, -0.9920379, 0, 1, 0, 0.9920379, 0, 0.12593922, 57.349804, 0.19395876, -19.490978)
+
+[node name="LivingRoomLoungeChair" type="Marker3D" parent="RemoteSpawner/Locations" index="28"]
+transform = Transform3D(0.53200454, 0, 0.8467414, 0, 1, 0, -0.8467414, 0, 0.53200454, -0.027135849, -0.082859516, 3.746647)
+
+[node name="EntrancePumpkinsBehind" type="Marker3D" parent="RemoteSpawner/Locations" index="29"]
+transform = Transform3D(-0.75470954, 0, -0.65605885, 0, 1, 0, 0.65605885, 0, -0.75470954, 43.67728, 0.2897699, 17.602798)
+
+[node name="MasterBedroomBooksBehind" type="Marker3D" parent="RemoteSpawner/Locations" index="30"]
+transform = Transform3D(0.06994794, 0, -0.9975506, -0.09432847, 0.99551916, -0.006614284, 0.99308074, 0.094560094, 0.06963452, 46.239304, 0.80091786, -27.774958)
+
+[node name="SkullGreenFloor" type="Marker3D" parent="RemoteSpawner/Locations" index="31"]
+transform = Transform3D(-0.73395514, 0, -0.6791979, 0, 1, 0, 0.6791979, 0, -0.73395514, 40.501617, 0.09368086, -6.6371727)
 
 [node name="HUD" parent="." instance=ExtResource("17_5vyxx")]
 

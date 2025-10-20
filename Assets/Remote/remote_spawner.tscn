@@ -228,6 +228,7 @@ shape = SubResource("BoxShape3D_jhlxh")
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 stream = ExtResource("3_hp371")
 volume_db = -15.0
+max_db = -4.0
 bus = &"Soundeffects"
 
 [node name="Locations" type="Node3D" parent="."]

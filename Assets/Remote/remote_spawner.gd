@@ -1,7 +1,7 @@
 @tool
 extends Node3D
 
-@export var time_score = 15.0
+@export var time_score = 20.0
 @export var click_score: int = 1
 @export var debug_value: int = 0
 
@@ -12,9 +12,9 @@ extends Node3D
 var current_location_index = 0
 
 ## setPosition sets the "Remote" position to one of the set Marker3Ds within "Locations".
-func setPosition(index: int) -> void:
-	print("Setting to "+str(index)+" name: "+str(Locations[index].name))
-	
+func setPosition(index: int, playSound: bool) -> void:
+	if debug_value > 0:
+		print("Setting to "+str(index)+" name: "+str(Locations[index].name))
 	
 	current_location_index = index
 	# Wait for the scene tree to process
@@ -22,7 +22,8 @@ func setPosition(index: int) -> void:
 
 	Remote.global_position = Locations[index].global_position
 	Remote.global_rotation = Locations[index].global_rotation
-	spark_sound.play()
+	if playSound:
+		spark_sound.play()
 
 ## getSemiRandomIndex returns a "random" index of the locations, but makes sure it's different than the previous.
 func getSemiRandomLocation() -> int:
@@ -34,11 +35,11 @@ func getSemiRandomLocation() -> int:
 
 func _ready():
 	if debug_value > 0:
-		setPosition(debug_value)
+		setPosition(debug_value, false)
 	else:	
-		setPosition(0) # Always start at location 0
+		setPosition(0, false) # Always start at location 0
 	
 func _on_interact_area_remote_interacted() -> void:
-	setPosition(getSemiRandomLocation())
+	setPosition(getSemiRandomLocation(), true)
 	GlobalState.add_time(time_score)
 	GlobalState.add_score(click_score)
