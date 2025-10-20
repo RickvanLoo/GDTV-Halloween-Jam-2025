@@ -1,7 +1,9 @@
 @tool
 extends Node3D
 
-@export var time_score = 10.0
+@export var time_score = 15.0
+@export var click_score: int = 1
+@export var debug_value: int = 0
 
 @onready var Remote = get_node("Remote")
 @onready var Locations = get_node("Locations").get_children(true)
@@ -23,8 +25,12 @@ func getSemiRandomLocation() -> int:
 	return random_index
 
 func _ready():
-	setPosition(0) # Always start at location 0
+	if debug_value > 0:
+		setPosition(debug_value)
+	else:	
+		setPosition(0) # Always start at location 0
 	
 func _on_interact_area_remote_interacted() -> void:
 	setPosition(getSemiRandomLocation())
 	GlobalState.add_time(time_score)
+	GlobalState.add_score(click_score)

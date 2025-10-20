@@ -1,12 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://dflbaynagx3ei"]
+[gd_scene load_steps=10 format=3 uid="uid://dflbaynagx3ei"]
 
-[ext_resource type="Script" path="res://Levels/Menu/game_over.gd" id="1_8jqwo"]
+[ext_resource type="Script" uid="uid://i4udnsmwr4ml" path="res://Levels/Menu/game_over.gd" id="1_8jqwo"]
 [ext_resource type="FontFile" uid="uid://b8j8ofai05mls" path="res://Fonts/Eater/Eater-Regular.ttf" id="1_cxxjm"]
 [ext_resource type="Texture2D" uid="uid://dm2krd33xdim" path="res://Images/TVImage.png" id="2_3qpau"]
-[ext_resource type="Script" path="res://Levels/Menu/restart_button.gd" id="2_hxi4m"]
+[ext_resource type="Script" uid="uid://dqqbsqgjlfgrb" path="res://Levels/Menu/restart_button.gd" id="2_hxi4m"]
 [ext_resource type="Script" uid="uid://dehlvbba0ckl7" path="res://Levels/Menu/menu_button.gd" id="5_fos62"]
 [ext_resource type="AudioStream" uid="uid://dldbs5btxfw10" path="res://Sounds/evillaugh.ogg" id="6_3tdws"]
 [ext_resource type="AudioStream" uid="uid://6ejmtpbnpcr1" path="res://Sounds/static.ogg" id="6_5alg3"]
+[ext_resource type="Script" uid="uid://drpdp77fh24u6" path="res://Levels/Menu/score.gd" id="8_ardah"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3qpau"]
 bg_color = Color(1, 1, 1, 0.7254902)
@@ -32,14 +33,14 @@ grow_vertical = 2
 texture = ExtResource("2_3qpau")
 expand_mode = 3
 
-[node name="Label" type="Label" parent="."]
+[node name="GameOverText" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = -243.5
-offset_bottom = -108.5
+offset_top = -267.5
+offset_bottom = -132.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_cxxjm")
@@ -95,6 +96,22 @@ stream = ExtResource("6_5alg3")
 volume_db = -4.771
 autoplay = true
 bus = &"Music"
+
+[node name="Score" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -131.5
+offset_bottom = -108.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "Score: 123123"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("8_ardah")
 
 [connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
